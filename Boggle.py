@@ -56,7 +56,7 @@ def get_neighbors(row, col):
         n.append((new_r, new_c, neigh[2]))
     return n
  
- def dfs(row, col, visited, trie, now_word, direction):
+def dfs(row, col, visited, trie, now_word, direction):
     """Scan the graph using DFS"""
     if (row, col) in visited:
         return
@@ -74,13 +74,13 @@ def get_neighbors(row, col):
         for n in neighbors:
             dfs(n[0], n[1], visited[::], trie[letter], now_word, direction + " " + n[2])
            
- def main(trie_node):
+def main(trie_node):
     """Initiate the search for words in boggle"""
     trie_node = build_trie(english_words, trie_node)
 
     # print the board
     print("Given board")
-    for i in range(lenr):print (boggle[i])
+    for i in range(row_len):print (boggle[i])
     print ('\n')
 
     for row in range(row_len):
